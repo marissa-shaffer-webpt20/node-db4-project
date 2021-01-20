@@ -1,13 +1,17 @@
 
-exports.seed = function(knex) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
+exports.seed =async function(knex) {
+  
+  await knex("amount").insert([
+    {amount: "1 cup"},
+    {amount: "1/2 cup"},
+    {amount: "1/4 cup"},
+    {amount: "1/3 cup"},
+    {amount: "1 tablespoon"},
+    {amount: "1 teaspoon"},
+    {amount: "2 tablespoons"},
+    {amount: "1 egg"},
+    {amount: "2 egg"},
+    {amount: "3 egg"},
+    
+  ])
 };

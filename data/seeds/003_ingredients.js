@@ -1,13 +1,16 @@
 
-exports.seed = function(knex) {
+exports.seed =async function(knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
+  await knex("ingredients").insert([
+    {name: "egg"},
+    {name: "butter"},
+    {name: "oil"},
+    {name: "water"},
+    {name: "vanilla extract"},
+    {name: "gluten free pumpkin pancake mix"},
+    {name: "gluten free funfetti cake mix"},
+    {name: "gluten free chocolate chip cookie mix"},
+    {name: "gluten free pumpkin bread mix"},
+
+  ])
 };
